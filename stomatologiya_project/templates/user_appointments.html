@@ -1,0 +1,66 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваши записи на прием</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="container">
+        <div class="row" style="margin-top: 200px;"> <!-- Добавлен стиль для отступа вверх -->
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h1>Ваши записи на прием</h1>
+                <hr>
+                {% if appointments %}
+                    <ul>
+                        {% for appointment in appointments %}
+                            <li>{{ appointment }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>У вас нет записей на прием.</p>
+                {% endif %}
+                <hr>
+                <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную</a>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="copyright-text">
+                        <p>Dr.Croc Dentistry &copy; 2015  
+                        
+                         <a href="" target="_parent"></a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/dr.croc_krg/"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=77789995387"><i class="fa fa-whatsapp"></i></a>
+                            </li>
+                            <!-- <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a> -->
+                            <!-- </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Удалить запись на прием</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <br><br><br><br>
+    <h2 align="center">Выберите записи для удаления</h2>
+    <br><br>
+    <form method="post" action="{% url 'delete_appointment' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Удалить выбранные записи</button>
+        <a href="{% url 'adm' %}">
+            <button type="button">Назад</button>
+        </a>
+    </form>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="copyright-text">
+                        <p>Dr.Croc Dentistry &copy; 2015  
+                        
+                         <a href="" target="_parent"></a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <ul>
+                            <!-- <li>
+                                <a href="https://www.instagram.com/dr.croc_krg/"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=77789995387"><i class="fa fa-whatsapp"></i></a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a> -->
+                            <!-- </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

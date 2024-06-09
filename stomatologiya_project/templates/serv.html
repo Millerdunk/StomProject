@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Meteor HTML CSS Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+        
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}">
+        <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css.map' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css.map' %}">
+    
+        <!-- JavaScript -->
+        <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plugins.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+        <script src="{% static 'js/vendor/npm.js' %}"></script>
+    
+        <style>
+    
+            /* Общие стили для страницы */
+body {
+    background-color: #f0f0f0; /* Цвет фона */
+    margin-top: 60px; /* Отступ сверху для контента под хедером */
+    margin: 0; /* Сброс отступов */
+    padding: 0; /* Сброс полей */
+}
+
+/* Стили для хедера */
+.header {
+    background-color: rgba(51, 51, 51, 0.7); /* Цвет фона с прозрачностью */
+    color: #fff; /* Цвет текста */
+    padding: 15px 0; /* Внутренние отступы */
+}
+
+/* Стили для подвала */
+footer {
+    position: fixed; /* Фиксированное положение */
+    bottom: 0; /* Прижат к нижнему краю */
+    width: 100%; /* Ширина 100% */
+    background-color: #333; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 15px 0; /* Внутренние отступы */
+}
+
+/* Стили для ссылок социальных сетей */
+.social-icons ul {
+    list-style: none; /* Сброс маркеров списка */
+    padding: 0; /* Сброс внутренних отступов */
+}
+
+.social-icons li {
+    display: inline-block; /* Располагаем горизонтально */
+    margin-right: 10px; /* Отступ между элементами */
+}
+
+.social-icons a {
+    color: #fff; /* Цвет текста ссылок */
+}
+
+/* Стили для кнопок */
+.btn-primary {
+    background-color: #333; /* Цвет фона кнопки */
+    border-color: #4CAF50; /* Цвет границы кнопки */
+}
+
+/* Стили для формы */
+form {
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: 0 auto; /* Выравнивание по центру */
+}
+
+input[type="text"] {
+    width: 100%; /* Ширина 100% */
+    padding: 10px; /* Внутренние отступы */
+    margin-bottom: 10px; /* Отступ снизу */
+    box-sizing: border-box; /* Учитываем границы и поля в общей ширине */
+}
+
+input[type="submit"] {
+    width: 100%; /* Ширина 100% */
+    padding: 10px; /* Внутренние отступы */
+    background-color: #333; /* Цвет фона */
+    border: none; /* Убираем границу */
+    color: #fff; /* Цвет текста */
+    cursor: pointer; /* Изменяем указатель при наведении */
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(51, 51, 51, 0.7); /* Цвет фона с прозрачностью при наведении */
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%; /* Ширина 100% */
+    border-collapse: collapse; /* Схлопываем границы ячеек */
+}
+
+th, td {
+    padding: 8px; /* Внутренние отступы */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border-bottom: 1px solid #ffffff; /* Горизонтальная граница с ячейками снизу */
+}
+
+th {
+    background-color: #c9eeff; /* Цвет фона для заголовков таблицы */
+}
+
+    
+        </style>
+    </head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scroll-top">
+                        <div class="logo"></div>
+                    </a>
+                </div>
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'index' %}" class="scroll-top">На главную</a></li>
+                        <li><a href="team" class="scroll-link" data-id="about"></a></li>
+                        <li><a href="services" class="scroll-link" data-id="blog"></a></li>
+                        <li><a href="contact" class="scroll-link" data-id="contact"></a></li>
+                        <!-- <li><a href="{% url 'login' %}">Мой кабинет</a></li> -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <div class="container">
+        <h1 class="j53" style="text-align: center;">Прайс-лист</h1>
+        <h2 class="j53" style="text-align: center;">Цены на наши услуги:</h2>					
+<h2 class="j53">Консультация</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Врач стоматолог</td>
+<td class="j52" style="width: 150px;">3 000</td>
+</tr>
+</tbody>
+</table>
+<h2 class="j53">Рентгено-диагностика</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51" style="width: 150px;">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Панорамный снимок (2D изображение Planmeca Romexis)</td>
+<td class="j52" style="width: 150px;">4 000</td>
+</tr>
+<tr>
+<td class="j52">ТРГ-снимок (телерентгенограмма)</td>
+<td class="j52" style="width: 150px;">4 000</td>
+</tr>
+<tr>
+<td class="j52">3D компьютерно-томографический снимок<br>
+(один сегмент 6смх8см)</td>
+<td class="j52" style="width: 150px;">7 000</td>
+</tr>
+<tr>
+<td class="j52">3D компьютерно-томографический снимок<br>
+(всей зубо-челюстной системы)</td>
+<td class="j52" style="width: 150px;">21 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Терапевтическая стоматология</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51" style="width: 150px;">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Лечение кариеса (Germany)</td>
+<td class="j52" style="width: 150px;">от 25 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение кариеса пломбировочными материалами (премиум класса Zenit, Asteria) </td>
+<td class="j52" style="width: 150px;">от 55 000</td>
+</tr>
+<tr>
+<td class="j52">Эстетическая реставрация центральных зубов<br>
+</td>
+<td class="j52" style="width: 150px;">от 25 000 - 50 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение пульпита (воспаление нерва) одноканального зуба</td>
+<td class="j52" style="width: 150px;">от 35 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение пульпита двухканального зуба</td>
+<td class="j52" style="width: 150px;">от 40 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение пульпита трехканального зуба</td>
+<td class="j52" style="width: 150px;">от 45 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение пульпита четырехканального зуба</td>
+<td class="j52" style="width: 150px;">от 50 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение периодонтита (воспаление корня) одноканального зуба</td>
+<td class="j52" style="width: 150px;">от 40 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение периодонтита двухканального зуба</td>
+<td class="j52" style="width: 150px;">от 45 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение периодонтита трехканального зуба</td>
+<td class="j52" style="width: 150px;">от 50 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение периодонтита четырехканального зуба</td>
+<td class="j52" style="width: 150px;">от 60 000</td>
+</tr>
+<tr>
+<td class="j52">Сложное эндодонтическое лечение корневых каналов</td>
+<td class="j52" style="width: 150px;">от 55 000 - 150 000</td>
+</tr>
+<tr>
+<td class="j52">Извлечение инструментов из корневых каналов</td>
+<td class="j52" style="width: 150px;">от 35 000 - 100 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Наркоз и седация</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Наркоз (севоран) - 1 час (до 18 лет)</td>
+<td class="j52" style="width: 150px;">80 000</td>
+</tr>
+<tr>
+<td class="j52">Наркоз (севоран) - 1 час (старше 18 лет)</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+<tr>
+<td class="j52">Седация, с закисью азота (аппарат Matrix) - 1 час (дети до 18 лет)</td>
+<td class="j52" style="width: 150px;">20 000</td>
+</tr>
+<tr>
+<td class="j52">Седация, с закисью азота (аппарат Matrix) - 1 час (старше 18 лет)</td>
+<td class="j52" style="width: 150px;">30 000</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2 class="j53">Профессиональная гигиена полости рта</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Профессиональная чистка зубов на аппарате KaVo PROPHY</td>
+<td class="j52" style="width: 150px;">30 000</td>
+</tr>
+<tr>
+<td class="j52">Профессиональная чистка зубов на аппарате AIR-Flow Prophylaxis MASTER</td>
+<td class="j52" style="width: 150px;">70 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Комплекс косметического отбеливания</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Профессиональное осветление зубов 1-2 тона Pearls Smile (Germany)</td>
+<td class="j52" style="width: 150px;"></td>
+</tr>
+<tr>
+<td class="j52">Профессиональная чистка зубов ультразвуком</td>
+<td class="j52" style="width: 150px;"></td>
+</tr>
+<tr>
+<td class="j52">Профессиональная чистка аппаратом KaVo</td>
+<td class="j52" style="width: 150px;">45 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Химическое отбеливание зубов</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Opalescence Boost 40% (Осветление 1-6 тонов)</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Имплантация</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Установка импланта DIO (Южная Корея)</td>
+<td class="j52" style="width: 150px;">125 000</td>
+</tr>
+<tr>
+<td class="j52">Установка импланта DIO Active (Южная Корея)</td>
+<td class="j52" style="width: 150px;">180 000</td>
+</tr>
+<tr>
+<td class="j52">Установка импланта MegaGen AnyOne (Южная Корея)</td>
+<td class="j52" style="width: 150px;">200 000</td>
+</tr>
+<tr>
+<td class="j52">Установка импланта MegaGen AnyRidge (Южная Корея)</td>
+<td class="j52" style="width: 150px;">250 000</td>
+</tr>
+<tr>
+<td class="j52">Установка импланта Neodent (Швейцария)</td>
+<td class="j52" style="width: 150px;">200 000</td>
+</tr>
+<tr>
+<td class="j52">Установка импланта (Straumann Швейцария)</td>
+<td class="j52" style="width: 150px;">350 000</td>
+</tr>  
+<tr>
+<td class="j52">Изготовление хирургического навигационного шаблона</td>
+<td class="j52" style="width: 150px;">50 000</td>
+</tr>
+<tr>
+<td class="j52">Изготовление первичного протеза на систему All in 4</td>
+<td class="j52" style="width: 150px;">700 000</td>
+</tr>
+<tr>
+<td class="j52">Изготовление вторичного протеза на систему All in 4</td>
+<td class="j52" style="width: 150px;">800 000</td>
+</tr>
+<tr>
+<td class="j52">Операция по поднятию дна верхнечелюстной<br>
+пазухи (закрытый синус-лифтинг)</td>
+<td class="j52" style="width: 150px;">от 300 000 - 700 000</td>
+</tr>      
+<tr>
+<td class="j52">Установка формирователя десны (Корея)</td>
+<td class="j52" style="width: 150px;">от 15 000</td>
+</tr> 
+<tr>
+<td class="j52">Установка формирователя десны (Швейцария)</td>
+<td class="j52" style="width: 150px;">от 30 000</td>
+</tr> 
+<tr>
+<td class="j52">Установка металлокерамической коронки<br>
+на опорный имплант (Корея)</td>
+<td class="j52" style="width: 150px;">от 80 000</td>
+</tr>
+<tr>
+<td class="j52">Установка циркониевой коронки на имплантах STRAUMANN (Швейцария)</td>
+<td class="j52" style="width: 150px;">от 270 000</td>
+</tr>
+<tr>
+<td class="j52">Установка циркониевой коронки на имплант</td>
+<td class="j52" style="width: 150px;">от 150 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Съемное протезирование</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Протез бюгельный металлический<br>
+(фиксация на замках-аттачментах)</td>
+<td class="j52" style="width: 150px;">от 250 000</td>
+</tr>
+<tr>
+<td class="j52">Микропротез</td>
+<td class="j52" style="width: 150px;">от 40 000</td>
+</tr>
+<tr>
+<td class="j52">Cъемный протез на имплантах (Южная Корея)</td>
+<td class="j52" style="width: 150px;">от 350 000</td>
+</tr>
+<tr>
+<td class="j52">Cъемный протез на имплантах (Швейцария)</td>
+<td class="j52" style="width: 150px;">от 500 000</td>
+</tr> 
+</tbody>
+</table>
+
+<h2 class="j53">Ортопедия</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Коронка металлокерамическая<br>
+(Ivoclar Vivadent EPS Style Germany)</td>
+<td class="j52" style="width: 150px;">от 45 000</td>
+</tr>
+<tr>
+<td class="j52">Коронка металлокерамическая<br>
+(Ivoclar Vivadent EPS Style Germany) препарирование под контролем микроскопа</td>
+<td class="j52" style="width: 150px;">от 50 000</td>
+</tr>
+<tr>
+<td class="j52">Винир (E-Max Germany)</td>
+<td class="j52" style="width: 150px;">160 000</td>
+</tr>
+<tr>
+<td class="j52">Авторский художественный винир</td>
+<td class="j52" style="width: 150px;">200 000</td>
+</tr>    
+<tr>
+<td class="j52">Коронка Диоксид Циркония</td>
+<td class="j52" style="width: 150px;">150 000</td>
+</tr>
+<tr>
+<td class="j52">Вкладка цельно - керамическая</td>
+<td class="j52" style="width: 150px;">30 000</td>
+</tr>
+<tr>
+<td class="j52">Коронка цельно - литая (КХС)</td>
+<td class="j52" style="width: 150px;">15 000</td>
+</tr>
+<tr>
+<td class="j52">Вкладка металлическая</td>
+<td class="j52" style="width: 150px;">10 000</td>
+</tr>
+<tr>
+<td class="j52">Временная пластмассовая коронка, изготовленная прямым методом</td>
+<td class="j52" style="width: 150px;">10 000</td>
+</tr>
+<tr>
+<td class="j52">Временная пластмассовая коронка изготовленная с помощью технологии CAD/CAM</td>
+<td class="j52" style="width: 150px;">15 000</td>
+</tr>
+<tr>
+<td class="j52">Снятие коронок (1 ед.) </td>
+<td class="j52" style="width: 150px;">от 5 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Хирургия</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Операция по поднятию слизистой оболочки<br>
+гайморовой пазухи (синус лифтинг)</td>
+<td class="j52" style="width: 150px;">от 350 000 - 700 000</td>
+</tr>
+<tr>
+<td class="j52">Направленная костная регенерация (НКР)</td>
+<td class="j52" style="width: 150px;">от 150 000 - 200 000</td>
+</tr>
+<tr>
+<td class="j52">Расщепление костного гребня</td>
+<td class="j52" style="width: 150px;">от 150 000 - 200 000</td>
+</tr>
+<tr>
+<td class="j52">Удаление зуба с использованием PRF мембраны</td>
+<td class="j52" style="width: 150px;">от 15 000</td>
+</tr>
+<tr>
+<td class="j52">Пластикика уздечки лазером (детям)</td>
+<td class="j52" style="width: 150px;">30 000</td>
+</tr> 
+<tr>
+<td class="j52">Пластика уздечки лазером (взрослые)</td>
+<td class="j52" style="width: 150px;">35 000</td>
+</tr> 
+</tbody>
+</table>
+
+<h2 class="j53">Хирургическая стоматология</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Удаление зуба (простое)</td>
+<td class="j52" style="width: 150px;">от 25 000</td>
+</tr>
+<tr>
+<td class="j52">Удаление молочного зуба</td>
+<td class="j52" style="width: 150px;">от 15 000</td>
+</tr>
+<tr>
+<td class="j52">Удаление зуба (сложное)</td>
+<td class="j52" style="width: 150px;">от 20 000</td>
+</tr>
+<tr>
+<td class="j52">Удаление зуба мудрости</td>
+<td class="j52" style="width: 150px;">от 15 000 - 100 000</td>
+</tr>
+
+<tr>
+<td class="j52">Резекция верхушки корня</td>
+<td class="j52" style="width: 150px;">от 30 000</td>
+</tr> 
+<tr>
+<td class="j52">Операция по иссечению копюшона над зубом мудрости</td>
+<td class="j52" style="width: 150px;">от 15 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Амбулаторная хирургия</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Пластика уздечки губ и языка</td>
+<td class="j52" style="width: 150px;">от 20 000</td>
+</tr>
+<tr>
+<td class="j52">Удаление атеромы (гемангиомы)</td>
+<td class="j52" style="width: 150px;">от 30 000</td>
+</tr>
+<tr>
+<td class="j52">Удаление доброкачественных новообразований</td>
+<td class="j52" style="width: 150px;">от 40 000</td>
+</tr>
+
+<tr>
+<td class="j52">Коррекция уздечки губ и языка при помощи лазера</td>
+<td class="j52" style="width: 150px;">от 30 000</td>
+</tr> 
+</tbody>
+</table>
+
+<h2 class="j53">Детская стоматология</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Первичная консультация десткого стоматолога</td>
+<td class="j52" style="width: 150px;">3000</td>
+</tr>
+<tr>
+<td class="j52">Лечение кариеса молочного зуба</td>
+<td class="j52" style="width: 150px;">23 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение пульпита молочного зуба</td>
+<td class="j52" style="width: 150px;">30 000</td>
+</tr>
+<tr>
+<td class="j52">Лечение периодонтита молочного зуба</td>
+<td class="j52" style="width: 150px;">35 000</td>
+</tr>
+<tr>
+<td class="j52">Пластинка</td>
+<td class="j52" style="width: 150px;">40 000</td>
+</tr> 
+<tr>
+<td class="j52">Коронка металлическая</td>
+<td class="j52" style="width: 150px;">10 000</td>
+</tr> 
+<tr>
+<td class="j52">Коронка циркониевая</td>
+<td class="j52" style="width: 150px;">40 000</td>
+</tr> 
+<tr>
+<td class="j52">Профессионаьная чистка</td>
+<td class="j52" style="width: 150px;">25 000</td>
+</tr> 
+</tbody>
+</table>
+
+<h2 class="j53">Лечение зубов с операционным дентальным микроскопом (с увелечением)</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Лечение кариеса</td>
+<td class="j52" style="width: 150px;">от 40 000</td>
+</tr>
+<tr>
+<td class="j52" style="text-align:center;">Лечение пульпита (воспаление нерва):</td>
+</tr>
+<tr>
+<td class="j52">Одноканального зуба</td>
+<td class="j52" style="width: 150px;">70 000</td>
+</tr>
+<tr>
+<td class="j52">Двухканального зуба</td>
+<td class="j52" style="width: 150px;">80 000</td>
+</tr>
+<tr>
+<td class="j52">Трехканального зуба</td>
+<td class="j52" style="width: 150px;">90 000</td>
+</tr>
+<tr>
+<td class="j52">Четырехканального зуба</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>   
+<tr>
+<td class="j52" style="text-align:center;">Лечение периодонтита и перелечивание ранее леченых зубов:</td>
+</tr>  
+<tr>
+<td class="j52">Одноканального зуба</td>
+<td class="j52" style="width: 150px;">80 000</td>
+</tr>
+<tr>
+<td class="j52">Двухканального зуба</td>
+<td class="j52" style="width: 150px;">90 000</td>
+</tr>
+<tr>
+<td class="j52">Трехканального зуба</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+<tr>
+<td class="j52">Четырехканального зуба</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Ортодонтия</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Комплекс лечения на Брекет- системе металлической BioMim (до 15-18 лет)</td>
+<td class="j52" style="width: 150px;">от 600 000</td>
+</tr>
+<tr>
+<td class="j52">Комплекс лечения на Брекет- системе металлической самолигирующих брекетах ( Damon, 4Н )</td>
+<td class="j52" style="width: 150px;">от 1 000 000</td>
+</tr>
+<tr>
+<td class="j52">Мини - винт ( 1 шт.) </td>
+<td class="j52" style="width: 150px;">40 000</td>
+</tr>
+<tr>
+<td class="j52">Аппараты расширяющие верхнюю челюсть ( Марко-Росса, Хайрекс, Хаас )</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+<tr>
+<td class="j52">Аппараты MSE, MARPE  ( цена зависит от конструкции аппарата )</td>
+<td class="j52" style="width: 150px;">от 260 000 - 380 000</td>
+</tr>
+<tr>
+<td class="j52">Лицевая маска</td>
+<td class="j52" style="width: 150px;">40 000</td>
+</tr>
+<tr>
+<td class="j52">Установка ретейнера ( после снятия Брекет - системы ) одна челюсть </td>
+<td class="j52" style="width: 150px;">20 000</td>
+</tr>
+<tr>
+<td class="j52">Изготовление ретенционной каппы ( но ночь после лечения ) одна челюсть</td>
+<td class="j52" style="width: 150px;">30 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Ортодонтия на каппах (элайнерах)</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, USD.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Планирование лечения на каппах "Invisaling"</td>
+<td class="j52" style="width: 150px;">600</td>
+</tr>
+<tr>
+<td class="j52">Лечения на каппах "Invisaling" (взрослые пациенты полный пакет)</td>
+<td class="j52" style="width: 150px;">от 5300</td>
+</tr>
+<tr>
+<td class="j52">Лечение на каппах Инвизилайн для детей (первая фаза ранний прикус, полный пакет)</td>
+<td class="j52" style="width: 150px;">2800</td>
+</tr>
+<tr>
+<td class="j52">Лечение на каппах Инвизилайн для детей (вторая фаза после первой фазы, если необходимо)</td>
+<td class="j52" style="width: 150px;">5100</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53" style="text-align: center;">Прайс доктора Макенского: <br>
+Все работы проводятся, под контролем микроскопа
+</h2>	
+
+<h2 class="j53">Ортопедия</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Винир 1 единица</td>
+<td class="j52" style="width: 150px;">200 000</td>
+</tr>
+<tr>
+<td class="j52">Коронка из диоксида циркония (циркон)</td>
+<td class="j52" style="width: 150px;">170 000</td>
+</tr>
+<tr>
+<td class="j52">Коронка из Дисиликата лития (EMax)</td>
+<td class="j52" style="width: 150px;">170 000</td>
+</tr>
+<tr>
+<td class="j52">Керамическая накладка</td>
+<td class="j52" style="width: 150px;">130 000</td>
+</tr>
+<tr>
+<td class="j52">Изготовление временных коронок</td>
+<td class="j52" style="width: 150px;">10 000</td>
+</tr>
+<tr>
+<td class="j52">Диагностическая модель (на одну челюсть)</td>
+<td class="j52" style="width: 150px;">50 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Лечение кариеса</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52">Средний кариес (1 посещение - 90-120 минут)</td>
+<td class="j52" style="width: 150px;">50 000</td>
+</tr>
+<tr>
+<td class="j52">Глубокий кариес (1 посещение - 120-180 минут)</td>
+<td class="j52" style="width: 150px;">80 000</td>
+</tr>
+<tr>
+<td class="j52">Реставрация передних зубов (2 посещения - 180 минут)</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="j53">Эндодонтия</h2>
+<table class="table">
+<thead class="thead-inverse">
+<tr>
+<th class="j50">Название услуги</th>
+<th class="j51">Цена, тг.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="j52" style="text-align:center;">Пульпит:</td>
+</tr>
+<tr>
+<td class="j52">Однокорневой пульпит (1 посещение - 60-90 минут)
+</td>
+<td class="j52" style="width: 150px;">60 000</td>
+</tr>
+<tr>
+<td class="j52">Двухкорневой пульпит (1 посешение - 60-90 минут)
+</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+<tr>
+<td class="j52">Многокорневой пульпит (1-3 посещения - 180-240 минут)</td>
+<td class="j52" style="width: 150px;">160 000</td>
+</tr>
+<tr>
+<td class="j52" style="text-align:center;">Периодонтит:</td>
+</tr>
+<tr>
+<td class="j52">Однокорневой зуб (1-2 посещения - 90-120 минут)
+</td>
+<td class="j52" style="width: 150px;">100 000</td>
+</tr>
+<tr>
+<td class="j52">Двухкорневой зуб (1-2 посещения - 90-120 минут)
+</td>
+<td class="j52" style="width: 150px;">120 000</td>
+</tr>
+<tr>
+<td class="j52">Многокорневой зуб (2-3 посещения - 180-240 минут)
+</td>
+<td class="j52" style="width: 150px;">180 000</td>
+</tr>
+<tr>
+<td class="j52">Извлечение инструмента в зависимости от сложности
+</td>
+<td class="j52" style="width: 150px;">100 000 - 180 000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</body>
+</html>

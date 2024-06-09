@@ -1,0 +1,5 @@
+.inline-field {
+    display: inline-block;
+    width: 48%; /* Установите подходящую ширину в зависимости от ваших предпочтений */
+    margin-right: 2%;
+}

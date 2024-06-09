@@ -1,0 +1,53 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Успешная отправка письма</title>
+    <style>
+      hr {
+          border: none;
+          height: 2px;
+          background-color: #000000;
+          margin: 10px 0;
+      }
+
+      
+  </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login" style="text-align: center;">
+                <br><br><br><br><br><br>
+                Письмо успешно отправлено
+            </div>
+        </div>
+        <form action="" class="signup">
+            <div class="appointment">
+                <h1></h1>
+            
+                <div class="greeting">
+                    <hr>
+                    <p>Здравствуйте, {{ first_name }}!</p>
+                </div>
+                <hr>
+                <div class="message">
+                    <p>Ваше обращение: {{ message }}</p>
+                </div>
+                <hr>
+                <div class="info">
+                    <p>В вашем личном кабинете будет указана информация о записи. Также мы свяжемся с вами предварительно.</p>
+                    <hr>
+                </div>
+            </div>
+            <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную</a>
+        </form>
+    </div>
+    </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
+{% endblock %}

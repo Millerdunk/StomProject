@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dr. Croc</title>
+    <!-- Template 2089 Meteor http://www.tooplate.com/view/2089-meteor -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hero-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bbaton.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modalwin.css' %}">
+   
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
+    
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/vendor/jquery-1.11.2.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+    <script src="{% static 'js/vendor/npm.js' %}"></script>
+    <script src="{% static 'js/modalwin.js' %}"></script>
+
+        <!-- Подключение внешних CSS файлов -->
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <!-- Ваш локальный CSS файл -->
+        <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+
+        <style>
+            .map-container {
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+                position: relative;
+            }
+    
+            .map-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+    
+            @media (max-width: 768px) {
+                .map-container {
+                    padding-bottom: 75%; /* Соотношение сторон 4:3 */
+                }
+            }
+        </style>
+
+    </head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scroll-top">
+                        <div class="logo"></div>
+                    </a>
+                </div>
+                <!--/.navbar-header-->
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="home" class="scroll-top">Главная</a></li>
+                        <li><a href="team" class="scroll-link" data-id="about">О нас</a></li>
+                        <li><a href="services" class="scroll-link" data-id="blog"></a></li>
+                        <li><a href="contact" class="scroll-link" data-id="contact">Контакты</a></li>
+                        <li><a href="{% url 'login' %}"  >Мой кабинет</a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+            </nav>
+            <!--/.navbar-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.header-->
+
+
+    <section class="cd-hero">
+        <ul class="cd-hero-slider autoplay">  
+        <!-- 
+            <ul class="cd-hero-slider autoplay"> for slider auto play 
+            <ul class="cd-hero-slider"> for disabled auto play
+        -->
+            <li class="selected first-slide">
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+                        <span>Вас приветствует стоматология</span>
+                        <h2>Dr.Croc</h2>
+                        <p>Мы приглашаем вас посетить нашу клинику и убедиться в том, что мы можем вам помочь.</p>
+                        <div class="primary-button">
+                            <a href="#" class="scroll-link" data-id="contact">Записаться на прием</a>
+                        </div>                           
+                    </div>                   
+                </div> <!-- .cd-full-width -->
+            </li>
+
+            <li class="second-slide">
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+                        <span>Мы предлогаем вам </span>
+                        <h2>Обширный спектор услуг</h2>
+                        <p>Запишитесь на прием в стоматологию Dr.Croc прямо сегодня и получите улыбку своей мечты!</p>
+                        <div class="primary-button">
+                            <a href="#" class="scroll-link" data-id="contact">Записаться на прием</a>
+                        </div>                        
+                    </div>                     
+                </div> <!-- .cd-full-width -->
+            </li>
+
+            <li class="third-slide">
+                <div class="cd-full-width">
+                    <div class="tm-slide-content-div slide-caption">
+                        <span>Стоматология</span>
+                        <h2>Dr.Croc</h2>
+                        <p>Мы стремимся к тому, чтобы наши пациенты чувствовали себя комфортно и уверенно во время лечения, поэтому мы уделяем особое внимание созданию уютной и расслабляющей атмосферы.</p>
+                        <div class="primary-button">
+                            <a href="#" class="scroll-link" data-id="contact">Записаться на прием</a>
+                        </div>                           
+                    </div>                         
+                </div> <!-- .cd-full-width -->
+            </li>
+        </ul> <!-- .cd-hero-slider -->
+
+        <div class="cd-slider-nav">
+            <nav>
+                <span class="cd-marker item-1"></span>
+                
+                <ul>
+                    <li class="selected"><a href="#0"></a></li>
+                    <li><a href="#0"></a></li>
+                    <li><a href="#0"></a></li>                        
+                </ul>
+            </nav> 
+        </div> <!-- .cd-slider-nav -->
+    </section> <!-- .cd-hero -->
+
+    <div id="about" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>О нас</h4>
+                        <div class="line-dec"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item first-service">
+                        <div class="icon"></div>
+                        <h4>Здоровье полости рта</h4>
+                        <p>Стоматология помогает поддерживать здоровье полости рта, что важно для общего здоровья и благополучия человека.</p>
+                    </div>
+                </div>
+                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item second-service">
+                        <div class="icon"></div>
+                        <h4>Красота</h4>
+                        <p>Стоматология может помочь улучшить внешний вид улыбки. Это может повысить самооценку и уверенность в себе.</p>
+                    </div>
+                </div>
+                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item third-service">
+                        <div class="icon"></div>
+                        <h4>Доступность</h4>
+                        <p>томатология доступна для людей с разным уровнем дохода. </p>
+                    </div>
+                </div>
+                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="service-item fourth-service">
+                        <div class="icon"></div>
+                        <h4>Комфорт</h4>
+                        <p>Современные стоматологические технологии делают лечение зубов более комфортным, чем когда-либо прежде. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="what-we-do">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="left-text">
+                        <h4>Dr. Croc<br>Ваша Улыбка - Наша Забота. Качественная Стоматология с Профессиональным Подходом</h4>
+                        <p>12 лет успешно подаренных улыбок!<br>Стоматологическая клиника Dr.Croc - это молодой, но уже успевший завоевать доверие пациентов, центр стоматологии. В клинике работают высококвалифицированные специалисты с большим опытом работы, которые постоянно повышают свою квалификацию, посещая семинары и курсы.<br></p>
+                        <ul>
+                            <li>
+                                <div class="white-button">
+                                    <a href="#" class="scroll-link" data-id="portfolio">Далее</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="primary-button">
+                                    <a href="#">Записаться!</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-image">
+                        <img src="{% static 'img/what-we-do-right-image.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <div id="portfolio" class="page-section">
+        <div class="content-wrapper">
+            <div class="inner-container container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-heading">
+                            <h4>Подробная информация</h4>
+                            <div class="line-dec"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="projects-holder-3">
+                    <div class="filter-categories">
+                        <ul class="project-filter">
+                            <li class="filter" data-filter="all"><span>Всё</span></li>
+                            <li class="filter" data-filter="nature"><span>Прайс</span></li>
+                            <li class="filter" data-filter="workspace"><span>Наши специалисты</span></li>
+                            <li class="filter" data-filter="city"><span>Услуги</span></li>
+                            <li class="filter" data-filter="technology"><span>Сертификаты</span></li>
+                        </ul>
+                    </div> -->
+                    <a href="{% url 'serv' %}" class="botr">Услуги и прайс</a>
+                    <a href="#" class="botr" id="openSchedule">График работы</a>
+                    <div class="white-button">
+                        <a href="#" class="scroll-link" data-id="blog">Далее</a>
+                    </div>
+
+                    <div id="scheduleModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>График работы</h2>
+                        <br>
+                        <h2>Будние дни - 09:00 – 19:00</h2>
+                        <br>
+                        <h2>Суббота - Экстренная запись</h2>
+                        <br>
+                        <h2>Воскресенье - Выходной</h2>
+                        <br>
+
+                        <!-- Здесь можете разместить ваш график работы -->
+                      </div>
+                    </div>
+                    <!-- <a href="#" class="botr">Сертификаты</a> -->
+
+
+                    <!-- <div class="projects-holder">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 project-item mix workspace">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_01.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_01.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 project-item mix workspace">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_02.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_02.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 project-item mix technology">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_03.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_03.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 project-item mix city">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_04.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_04.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 project-item mix nature">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_05.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_05.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div> -->
+                            <!-- <div class="col-md-3 col-sm-6 project-item mix technology">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_06.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_06.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div> -->
+                            <!-- <div class="col-md-3 col-sm-6 project-item mix workspace">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_07.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_07.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 project-item mix city">
+                              <div class="thumb">
+                                  <div class="image">
+                                    <img src="../static/img/portfolio_08.jpg">
+                                  </div>
+                                  <div class="hover-effect">
+                                    <a href="../static/img/portfolio_big_08.jpg" data-lightbox="image-1"><i class="fa fa-search"></i></a>
+                                  </div> -->
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<div>
+    <div id="blog" class="page-section">
+
+        <div class="gtco-testimonials">
+            <h2>Наши специалисты</h2>
+            <div class="owl-carousel owl-carousel1 owl-theme">
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="https://www.islandgift.ru/user/standard/man.png" alt="">
+                  <div class="card-body">
+                    <h5>Козин Сергей Николаевич <br />
+                      <span> Хирургическая стоматология и имплантология </span>
+                    </h5>
+                    <p class="card-text">“ Я с успехом окончил КГМА (Карагандинскую Государственную Медицинскую Академию) в 2009 году. Проходил интернатуру в 2010 году на базе клиники "Дантист", по специализации хирургическая стоматология и имплантология. Общий стаж работы 8 лет. Здоровые красивые зубы – мечта любого из нас. ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="https://www.islandgift.ru/user/standard/man.png" alt="">
+                  <div class="card-body">
+                    <h5>Котлярова Юлия Александровна<br />
+                      <span> Стоматолог-терапевт </span>
+                    </h5>
+                    <p class="card-text">“ Закончила карагандинскую государственную медицинскую академию в 2007 году. Проходила интернатуру на базе стоматологической клинике "Дантист". Общий стаж более 11 лет. ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="https://www.islandgift.ru/user/standard/man.png" alt="">
+                  <div class="card-body">
+                    <h5>Лигай Сергей Юрьевич<br />
+                      <span> Ортопедическая стоматология </span>
+                    </h5>
+                    <p class="card-text">“ Окончил КГМА в 2009 году. Проходил интернатуру на базе клиники "Стомед" в городе Кустанай. Там же успешно работал до 2012 года. С 2012 по 2015 год работал в "Стома К". С 2015 по 2018 год работал в стоматологической клинике "Дантист", по специализации ортопедическая стоматология. ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="https://www.islandgift.ru/user/standard/man.png" alt="">
+                  <div class="card-body">
+                    <h5>Маврова Валерия Сергеевна<br />
+                      <span> Стоматолог-терапевт </span>
+                    </h5>
+                    <p class="card-text">“ Закончила Карагандинский Государственный Медицинский Университет в 2018 году. Проходила интернатуру на базе КГМУ, а также в стоматологической клинике "Дантист". Врачебную деятельность продолжила в клинике "Дантист". Общий стаж работы 3 года. Профиль Валерии Сергеевны лечение кариеса, лечение осложненного кариеса (пульпит, периодонтит), профессиональная чистка, реставрация зубов и многое другое. ” </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="card text-center"><img class="card-img-top" src="https://www.islandgift.ru/user/standard/man.png" alt="">
+                  <div class="card-body">
+                    <h5>Оленев Игорь Николаевич<br />
+                      <span> Стоматолог-ортопед </span>
+                    </h5>
+                    <p class="card-text">“ Я окончил КГМА (Карагандинскую Государственную Медицинскую Академию) в 2009 году. Проходил интернатуру там же. Двери стоматологической клиники "Дантист" открылись для меня в 2010 году. Проработал там 8 лет!
+                        А теперь я работаю клинике Dr.Croc. ” </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Подключение внешних JavaScript файлов -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <!-- Ваш локальный JavaScript файл -->
+        <script src="{% static 'js/owl.js' %}"></script>
+    </div></div></div>
+          
+        
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Акции и скидки</h4>
+                        <div class="line-dec"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="blog-item b1">
+                        <div class="thumb">
+                            <img src="{% static 'img/blog_01.jpg' %}" alt="">
+                            <div class="text-content">
+                                <h4>Акция</h4>
+                                <span>Posted: <em>Karaganda</em>  /  Date: <em>23 Jan 2024</em>  /  Category: <em>Отсутствует</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-item second-blog b2">
+                        <div class="thumb">
+                            <img src="{% static 'img/blog_02.jpg' %}" alt="">
+                            <div class="text-content">
+                                <h4>Акция</h4>
+                                <span>Posted: <em>Karaganda</em>  /  Date: <em>23 Jan 2024</em>  /  Category: <em>Отсутствует</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-item b3">
+                        <div class="thumb">
+                            <img src="{% static 'img/blog_03.jpg' %}" alt="">
+                            <div class="text-content">
+                                <h4>Акция</h4>
+                                <span>Posted: <em>Karaganda</em>  /  Date: <em>23 Jan 2024</em>  /  Category: <em>Отсутствует</em></span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pop">
+                      <span>✖</span>
+                      <p>На данный момент акций нет</p>
+                    </div>
+                    <div class="pop2">
+                      <span>✖</span>
+                      <p>На данный момент акций нет</p>
+                    </div>
+                    <div class="pop3">
+                      <span>✖</span>
+                      <p>На данный момент акций нет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fun-facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="fact-item">
+                        <div class="counter" data-count="100">0</div>
+                        <span>И более подаренных улыбок</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="fact-item">
+                        <div class="counter" data-count="100">0</div>
+                        <span>процентов квалифицированные врачи</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="fact-item">
+                        <div class="counter" data-count="100">0</div>
+                        <span>и более счастливых клиентов</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="fact-item">
+                        <div class="counter" data-count="100">0</div>
+                        <span>и более успешных операций</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="contact" class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h4>Контакты</h4>
+                        <div class="line-dec"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="map-container">
+                        <!-- <img src="{% static 'img/map.jpg' %}" alt=""> -->
+                        <a class="dg-widget-link" href="http://2gis.kz/karaganda/firm/70000001032788083/center/73.1394946575165,49.77680242103675/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Караганды</a><div class="dg-widget-link"><a href="http://2gis.kz/karaganda/firm/70000001032788083/photos/70000001032788083/center/73.1394946575165,49.77680242103675/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a href="http://2gis.kz/karaganda/center/73.139502,49.775155/zoom/16/routeTab/rsType/bus/to/73.139502,49.775155╎Dr.Croc, стоматологическая клиника?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Dr.Croc, стоматологическая клиника</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":555,"height":400,"borderColor":"#a3a3a3","pos":{"lat":49.77680242103675,"lon":73.1394946575165,"zoom":16},"opt":{"city":"karaganda"},"org":[{"id":"70000001032788083"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <form id="contact" action="/send_message/" method="POST">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="first_name" type="text" class="form-control" placeholder="Ваше имя..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="phone_number" type="tel" class="form-control" placeholder="Ваш номер телефона..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6">
+                              <fieldset>
+                                <input name="email" type="email" class="form-control" placeholder="Ваш email..." required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" class="form-control" placeholder="Ваше обращение..." required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="btn">Отправить сообщение</button>
+                              </fieldset>
+                            </div>
+                          </form>                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="copyright-text">
+                        <p>Dr.Croc Dentistry &copy; 2015  </p>
+                         <p>Тел: +777 899 953 87</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/dr.croc_krg/"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=77789995387"><i class="fa fa-whatsapp"></i></a>
+                            </li>
+                            <!-- <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a> -->
+                            <!-- </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // navigation click actions 
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        // scroll to top action
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');         
+        });
+        // mobile nav toggle
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+    // scroll function
+    function scrollToID(id, speed){
+        var offSet = 50;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+    </script>
+</body>
+</html>

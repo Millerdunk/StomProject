@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Создать запись на прием</title>
+    <style>
+        .button-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+        
+        .button-container button {
+          margin: 0 10px;
+        }
+
+        .containerrr {
+  border: 1px solid #ddd; /* Стиль рамки */
+  border-radius: 5px; /* Скругление углов */
+  padding: 20px; /* Отступы внутри рамки */
+  margin: 20px auto; /* Выравнивание по центру */
+  max-width: 800px; /* Ограничение ширины */
+  box-shadow: 0px 0px 15px #cdcdcd;
+  background-color: #fff;
+  
+}
+
+@media (max-width: 768px) {
+  .containerrr {
+    max-width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-container button {
+    margin: 5px 0;
+  }
+}
+
+      </style>
+</head>
+<body>
+    {% include 'header.html' %}
+    <br><br><br><br>
+    <div class="containerrr">
+    <h2 align="center">Создать запись на прием</h2>
+    <br>
+    <br>
+    <form method="post" action="{% url 'adm' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="button-container">
+        <button class="btn btn-primary" type="submit">Создать запись на прием</button>
+
+        <a href="{% url 'delete_appointment' %}">
+            <button class="btn btn-primary" type="button">Удалить запись</button>
+        </a>
+
+        <a href="{% url 'list_appointments' %}">
+            <button class="btn btn-primary" type="button">Список заявок</button>
+        </a>
+    </div>
+</div>
+    </form>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="copyright-text">
+                        <p>Dr.Croc Dentistry &copy; 2015  
+                        
+                         <a href="" target="_parent"></a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <ul>
+                            <!-- <li>
+                                <a href="https://www.instagram.com/dr.croc_krg/"><i class="fa fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send?phone=77789995387"><i class="fa fa-whatsapp"></i></a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a> -->
+                            <!-- </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
